@@ -6,7 +6,7 @@ import UserProfileCard from "./UserProfileCard";
 const Profile = () => {
 
     return (
-        <main className="w-full px-6 py-6 bg-white dark:bg-dark text-dark dark:text-card min-h-screen">
+        <main className="w-full px-6 py-6 text-dark dark:text-card min-h-screen">
             <BreadCrumbHeader title={'Profile'} page={'Profile'} />
 
             <UserProfileCard />

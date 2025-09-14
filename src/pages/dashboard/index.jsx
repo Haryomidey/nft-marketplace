@@ -3,7 +3,7 @@ import TrendingBids from "./TrendingBids";
 
 const Dashboard = () => {
     return (
-        <main className="px-6 py-6 space-y-10 bg-white dark:bg-dark text-dark dark:text-card min-h-screen">
+        <main className="px-6 py-6 space-y-10 text-dark dark:text-card min-h-screen">
             
             <section className="grid grid-cols-4 gap-6">
                 <div className="col-span-2 bg-gradient-to-r from-purple-700 to-pink-500 text-white px-8 py-4 rounded-2xl flex flex-col justify-between">

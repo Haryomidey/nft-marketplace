@@ -11,7 +11,7 @@ const stats = [
 const BidsHeader = () => {
     return (
         <section className="w-full mb-16">
-            <BreadCrumbHeader title={'Bids'} page={'Bids'} />
+            <BreadCrumbHeader title={"Bids"} page={"Bids"} />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {stats.map((item, idx) => {
@@ -19,7 +19,7 @@ const BidsHeader = () => {
                     return (
                         <div
                             key={idx}
-                            className="flex items-center bg-dark-card rounded-2xl p-5 shadow-sm"
+                            className="flex items-center rounded-2xl p-5 shadow-sm bg-card dark:bg-dark-card transition-colors duration-300"
                         >
                             <div
                                 className={`flex items-center justify-center w-12 h-12 rounded-full ${item.color}`}
@@ -28,8 +28,12 @@ const BidsHeader = () => {
                             </div>
 
                             <div className="ml-4">
-                                <h3 className="text-white text-lg font-semibold">{item.value}</h3>
-                                <p className="text-gray-400 text-sm">{item.label}</p>
+                                <h3 className="text-lg font-semibold text-dark dark:text-white">
+                                    {item.value}
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    {item.label}
+                                </p>
                             </div>
                         </div>
                     );

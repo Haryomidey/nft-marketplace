@@ -34,14 +34,17 @@ const ActivityAndCreators = () => {
     return (
         <section className="grid grid-cols-2 gap-6 mt-10">
             {/* Recent Activity */}
-            <div className="bg-dark-card rounded-2xl p-6">
+            <div className="bg-card dark:bg-dark-card rounded-2xl p-6">
                 <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-white font-semibold">Recent Activity</h3>
+                    <h3 className="text-dark dark:text-white font-semibold">Recent Activity</h3>
                     <button className="text-primary text-sm font-medium">See more</button>
                 </div>
                 <div className="flex flex-col gap-4">
                     {activities.map((act, i) => (
-                        <div key={i} className="flex items-center justify-between bg-dark px-4 py-3 rounded-xl">
+                        <div
+                            key={i}
+                            className="flex items-center justify-between bg-primary-bg dark:bg-dark px-4 py-3 rounded-xl"
+                        >
                             <div className="flex items-center gap-3">
                                 <img
                                     src={`https://i.pravatar.cc/100?img=${i + 10}`}
@@ -49,24 +52,24 @@ const ActivityAndCreators = () => {
                                     className="w-10 h-10 rounded-full"
                                 />
                                 <div>
-                                    <h4 className="text-white font-semibold text-sm">{act.user}</h4>
-                                    <p className="text-gray-400 text-xs">{act.action}</p>
+                                    <h4 className="text-dark dark:text-white font-semibold text-sm">{act.user}</h4>
+                                    <p className="text-gray-600 dark:text-gray-400 text-xs">{act.action}</p>
                                 </div>
                             </div>
-                            <p className="text-gray-500 text-xs">{act.time}</p>
+                            <p className="text-gray-500 dark:text-gray-400 text-xs">{act.time}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
             {/* Top Creators */}
-            <div className="bg-dark-card rounded-2xl p-6">
-                <h3 className="text-white font-semibold mb-6">Top Creators</h3>
+            <div className="bg-card dark:bg-dark-card rounded-2xl p-6">
+                <h3 className="text-dark dark:text-white font-semibold mb-6">Top Creators</h3>
                 <div className="grid grid-cols-2 gap-4">
                     {creators.map((creator, i) => (
                         <div
                             key={i}
-                            className="flex items-center justify-between bg-dark px-4 py-3 rounded-xl"
+                            className="flex items-center justify-between bg-primary-bg dark:bg-dark px-4 py-3 rounded-xl"
                         >
                             <div className="flex items-center gap-3">
                                 <img
@@ -75,8 +78,8 @@ const ActivityAndCreators = () => {
                                     className="w-10 h-10 rounded-full"
                                 />
                                 <div>
-                                    <h4 className="text-white font-semibold text-sm">{creator.user}</h4>
-                                    <p className="text-gray-400 text-xs">{creator.items}</p>
+                                    <h4 className="text-dark dark:text-white font-semibold text-sm">{creator.user}</h4>
+                                    <p className="text-gray-600 dark:text-gray-400 text-xs">{creator.items}</p>
                                 </div>
                             </div>
                             <button className="px-4 py-1 border border-primary text-primary rounded-lg text-xs">

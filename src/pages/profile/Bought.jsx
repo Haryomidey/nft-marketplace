@@ -23,28 +23,26 @@ const Bought = () => {
         { name: "Ethan Walker", avatar: "https://i.pravatar.cc/100?img=37" },
     ];
 
-
     const bought = Array(8)
         .fill(null)
         .map((_, idx) => {
             const title = titles[idx % titles.length];
             const user = users[idx % users.length];
             return {
-            title,
-            image: Images[`nft${idx + 1}`],
-            avatar: user.avatar,
+                title,
+                image: Images[`nft${idx + 1}`],
+                avatar: user.avatar,
             };
         });
 
-
     return (
         <div>
-            <h3 className="text-white font-semibold mb-4">My Bought</h3>
+            <h3 className="text-dark dark:text-white font-semibold mb-4">My Bought</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {bought.map((item, idx) => (
                     <div
                         key={idx}
-                        className="bg-dark-card rounded-2xl overflow-hidden"
+                        className="bg-card dark:bg-dark-card rounded-2xl overflow-hidden shadow transition-colors"
                     >
                         <div className="relative">
                             <img
@@ -55,11 +53,13 @@ const Bought = () => {
                             <img
                                 src={item.avatar}
                                 alt="Owner"
-                                className="w-8 h-8 rounded-full border-2 border-dark-card absolute bottom-2 right-2"
+                                className="w-8 h-8 rounded-full border-2 border-card dark:border-dark-card absolute bottom-2 right-2"
                             />
                         </div>
                         <div className="p-3">
-                            <p className="text-white text-sm">{item.title}</p>
+                            <p className="text-dark dark:text-white text-sm font-medium">
+                                {item.title}
+                            </p>
                         </div>
                     </div>
                 ))}
