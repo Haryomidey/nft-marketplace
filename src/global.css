@@ -11,11 +11,20 @@
   --primary: "#6F4FF2";
   --primary-bg: "#F2F2F2";
   --dark-bg: "#131129";
-  --dark-card-bg: "1D1932";
+  --dark-card-bg: "#1D1932";
   --card-bg: "#FFFFFF";
   --custom-red: "#DC3546";
 }
 
+*::-webkit-scrollbar{
+  width: 3px;
+  background: #6F4FF2;
+}
+
+*::-webkit-scrollbar-thumb{
+  background: #131129;
+  border-radius: 10px;
+}
 
 body{
   width: 100%;

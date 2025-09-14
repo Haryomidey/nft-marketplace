@@ -8,6 +8,7 @@ import ActiveBids from "../pages/active-bid";
 import FavoriteBids from "../pages/favorite-bids";
 import Collections from "../pages/collections";
 import Profile from "../pages/profile";
+import Settings from "../pages/settings";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
                     { path: "/favorite-bids", element: <FavoriteBids /> },
                     { path: "/collections", element: <Collections /> },
                     { path: "/profile", element: <Profile /> },
+                    { path: "/settings", element: <Settings /> },
                 ],
             },
         ],
