@@ -10,8 +10,8 @@ const UserProfileCard = () => {
     };
 
     return (
-        <div className="w-full grid grid-cols-5 items-center gap-4 mb-16">
-            <div className="bg-card dark:bg-dark-card rounded-2xl p-5 col-span-2 shadow">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-5 items-start gap-6 mb-16">
+            <div className="bg-card dark:bg-dark-card rounded-2xl p-5 shadow col-span-1 lg:col-span-2">
                 <div>
                     <img
                         src={user.avatar}
@@ -49,7 +49,7 @@ const UserProfileCard = () => {
                 </div>
             </div>
 
-            <div className="col-span-3 h-full flex items-end">
+            <div className="col-span-1 lg:col-span-3 h-full flex items-start lg:items-end">
                 <Following />
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
     Squares2X2Icon,
     LockClosedIcon,
@@ -10,10 +10,17 @@ import {
 } from "@heroicons/react/24/outline";
 
 const Sidebar = () => {
+    const navigate = useNavigate();
+
     const linkClass = ({ isActive }) =>
         `flex flex-col items-center justify-center gap-1 text-xs transition-colors ${
             isActive ? "text-custom-red" : "text-gray-500 hover:text-custom-red"
         }`;
+
+    const handleLogout = () => {
+        localStorage.removeItem("authToken"); 
+        navigate("/login");
+    };
 
     return (
         <>
@@ -49,9 +56,12 @@ const Sidebar = () => {
                 </nav>
 
                 <div>
-                    <NavLink to="/logout" className={linkClass}>
+                    <button
+                        onClick={handleLogout}
+                        className="flex flex-col items-center justify-center gap-1 text-xs text-gray-500 hover:text-custom-red transition-colors"
+                    >
                         <ArrowRightOnRectangleIcon className="w-6 h-6" />
-                    </NavLink>
+                    </button>
                 </div>
             </aside>
 
@@ -74,9 +84,12 @@ const Sidebar = () => {
                 <NavLink to="/settings" className={linkClass}>
                     <Cog6ToothIcon className="w-6 h-6" />
                 </NavLink>
-                <NavLink to="/logout" className={linkClass}>
+                <button
+                    onClick={handleLogout}
+                    className="flex flex-col items-center justify-center gap-1 text-xs text-gray-500 hover:text-custom-red transition-colors"
+                >
                     <ArrowRightOnRectangleIcon className="w-6 h-6" />
-                </NavLink>
+                </button>
             </nav>
         </>
     );

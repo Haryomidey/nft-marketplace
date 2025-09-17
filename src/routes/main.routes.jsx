@@ -9,8 +9,16 @@ import FavoriteBids from "../pages/favorite-bids";
 import Collections from "../pages/collections";
 import Profile from "../pages/profile";
 import Settings from "../pages/settings";
+import MainLayout from "../layouts/MainLayout";
+import Login from "../pages/login";
 
 const router = createBrowserRouter([
+    {
+        element: <MainLayout />,
+        children: [
+            { path: "/login", element: <Login /> }
+        ]
+    },
     {
         element: <PrivateRoutes />,
         children: [

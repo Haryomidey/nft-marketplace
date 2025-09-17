@@ -10,71 +10,62 @@ const ActiveBidComp = ({ bids }) => {
                 </button>
             </div>
 
-            <div className="w-full overflow-x-auto">
-                <table className="min-w-[900px] w-full text-left text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
-                    <thead>
-                        <tr className="text-gray-500 dark:text-gray-300 text-xs uppercase">
-                            <th className="px-4 py-3">
-                                <input type="checkbox" className="form-checkbox rounded" />
-                            </th>
-                            <th className="px-4 py-3">Item List</th>
-                            <th className="px-4 py-3">Open Price</th>
-                            <th className="px-4 py-3">Your Offer</th>
-                            <th className="px-4 py-3">Recent Offer</th>
-                            <th className="px-4 py-3">Time Left</th>
-                            <th className="px-4 py-3">Action</th>
-                        </tr>
-                    </thead>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {bids.map((bid) => (
+                    <div
+                        key={bid.id}
+                        className="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:shadow-md transition-shadow"
+                    >
+                        {/* Card Header */}
+                        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src={bid.image}
+                                    alt={bid.title}
+                                    className="w-12 h-12 rounded-lg object-cover"
+                                />
+                                <div>
+                                    <h4 className="text-dark dark:text-white font-medium">
+                                        {bid.title}
+                                    </h4>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                                        {bid.user}
+                                    </p>
+                                </div>
+                            </div>
+                            <button className="text-dark dark:text-white hover:text-red-600 transition-colors">
+                                <FiX size={18} />
+                            </button>
+                        </div>
 
-                    <tbody className="divide-y divide-gray-200 dark:divide-dark">
-                        {bids.map((bid) => (
-                            <tr
-                                key={bid.id}
-                                className="bg-card dark:bg-dark hover:bg-primary-bg dark:hover:bg-dark-card transition-colors rounded-xl"
-                            >
-                                <td className="px-4 py-4">
-                                    <input type="checkbox" className="form-checkbox rounded" />
-                                </td>
-
-                                <td className="px-4 py-4 flex items-center gap-3">
-                                    <img
-                                        src={bid.image}
-                                        alt={bid.title}
-                                        className="w-12 h-12 rounded-lg object-cover"
-                                    />
-                                    <div>
-                                        <h4 className="text-dark dark:text-white font-medium">
-                                            {bid.title}
-                                        </h4>
-                                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                                            {bid.user}
-                                        </p>
-                                    </div>
-                                </td>
-
-                                <td className="px-4 py-4">{bid.openPrice}</td>
-                                <td className="px-4 py-4">{bid.yourOffer}</td>
-
-                                <td className="px-4 py-4 flex items-center gap-2">
+                        {/* Card Body */}
+                        <div className="p-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                            <div className="flex justify-between">
+                                <span className="font-medium">Open Price:</span>
+                                <span>{bid.openPrice}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="font-medium">Your Offer:</span>
+                                <span>{bid.yourOffer}</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                                <span className="font-medium">Recent Offer:</span>
+                                <span className="flex items-center gap-2">
                                     <img
                                         src={bid.recentOfferAvatar}
                                         alt="Offer Avatar"
-                                        className="w-8 h-8 rounded-full"
+                                        className="w-6 h-6 rounded-full"
                                     />
                                     {bid.recentOffer}
-                                </td>
-
-                                <td className="px-4 py-4">{bid.timeLeft}</td>
-
-                                <td className="px-4 py-4">
-                                    <button className="text-dark dark:text-white hover:text-red-600 transition-colors">
-                                        <FiX size={18} />
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                                </span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="font-medium">Time Left:</span>
+                                <span>{bid.timeLeft}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     );
