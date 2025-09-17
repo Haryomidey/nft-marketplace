@@ -11,12 +11,14 @@ import Profile from "../pages/profile";
 import Settings from "../pages/settings";
 import MainLayout from "../layouts/MainLayout";
 import Login from "../pages/login";
+import Signup from "../pages/sign-up";
 
 const router = createBrowserRouter([
     {
         element: <MainLayout />,
         children: [
-            { path: "/login", element: <Login /> }
+            { path: "/login", element: <Login /> },
+            { path: "/signup", element: <Signup /> }
         ]
     },
     {

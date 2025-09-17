@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LockClosedIcon } from "@heroicons/react/24/solid";
 
 const Login = () => {
@@ -20,7 +20,7 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black px-4">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black px-4 py-10">
             <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8">
                 <div className="flex flex-col items-center">
                     <div className="w-16 h-16 flex items-center justify-center bg-custom-red text-white rounded-full shadow-md mb-4">
@@ -84,13 +84,13 @@ const Login = () => {
                 </form>
 
                 <p className="mt-6 text-sm text-center text-gray-500 dark:text-gray-400">
-                    Don’t have an account?{" "}
-                    <a
-                        href="#"
+                    Don't have an account?{" "}
+                    <Link
+                        to="/signup"
                         className="text-custom-red font-medium hover:underline"
                     >
                         Sign up
-                    </a>
+                    </Link>
                 </p>
             </div>
         </div>
