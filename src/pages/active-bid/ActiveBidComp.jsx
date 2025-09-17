@@ -10,8 +10,8 @@ const ActiveBidComp = ({ bids }) => {
                 </button>
             </div>
 
-            <div className="overflow-x-auto">
-                <table className="w-full text-left text-sm text-gray-600 dark:text-gray-400">
+            <div className="w-full overflow-x-auto">
+                <table className="min-w-[900px] w-full text-left text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
                     <thead>
                         <tr className="text-gray-500 dark:text-gray-300 text-xs uppercase">
                             <th className="px-4 py-3">
